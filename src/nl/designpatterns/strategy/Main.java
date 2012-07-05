@@ -12,8 +12,6 @@ public class Main {
 		duck = new ScienceFictionDuck();
 		duck.fly();
 		duck.walk();
-		
-
 	}
 
 }
