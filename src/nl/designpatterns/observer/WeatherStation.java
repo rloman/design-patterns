@@ -4,7 +4,6 @@ public class WeatherStation implements Observer {
 
 	public WeatherStation(WeatherData obs) {
 		obs.subscribe(this);
-
 	}
 
 	@Override
