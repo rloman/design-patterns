@@ -1,4 +1,4 @@
-package nl.decorator.singleton;
+package nl.designpatterns.singleton;
 
 public enum SingletonEnum {
 	
