@@ -1,4 +1,4 @@
-package nl.designpatterns.facade;
+package nl.designpatterns.facade.hometheater;
 
 public class HomeTheaterFacade {
 	
