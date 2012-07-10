@@ -7,10 +7,12 @@ public abstract class CaffeineBeverage {
 		brew();
 		pourInCup();
 		addCondiments();
+		hook(); // name should change but it's still a hook! :-)
 	}
 	
 	 void boilWater() {
 		System.out.println("Boiling water ...");
+		hookWaterHasBoiled();
 	}
 	 
 	 void pourInCup() {
@@ -20,5 +22,9 @@ public abstract class CaffeineBeverage {
 
 	abstract void brew();
 	abstract void addCondiments();
+	
+	void hook(){} 
+	
+	void hookWaterHasBoiled(){}
 	
 }

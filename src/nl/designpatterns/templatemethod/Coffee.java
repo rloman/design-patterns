@@ -13,5 +13,10 @@ public class Coffee extends CaffeineBeverage {
 		System.out.println("Add milk and sugar to the coffeee.");
 
 	}
+	
+	@Override
+	void hook() {
+		System.out.println("Did you like the coffee?!");
+	}
 
 }
