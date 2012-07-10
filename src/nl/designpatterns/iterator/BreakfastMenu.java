@@ -1,27 +1,22 @@
 package nl.designpatterns.iterator;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-public class BreakfastMenu {
-	private List<String> food;
-	private String[] foodAlt;
+public class BreakfastMenu<E> implements Menu<E> {
+	private List<E> food;
+//	private String[] foodAlt;
 	
 	public BreakfastMenu() {
-		food = new ArrayList<String>();
+		food = new ArrayList<E>();
 	}
 	
-	public void addFood(String food) {
+	public void addFood(E food) {
 		this.food.add(food);
 	}
 	
-	public BreakfastMenuIterator getIterator() {
-		return new BreakfastMenuIterator(food);
-	}
-
-	public Iterator<String> iteratorAlt() {
-		Arrays.
+	public BreakfastMenuIterator<E> getIterator() {
+		return new BreakfastMenuIterator<E>(food);
 	}
 	
 }
