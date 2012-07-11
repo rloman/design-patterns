@@ -26,13 +26,28 @@ public class TreeImpl implements Tree {
 	public void add(Object o) {
 		this.object = o;
 		left = new TreeImpl(o);
-		right = new TreeImpl();
+		right = new TreeImpl(o);
 		
 	}
 
 	@Override
 	public Iterator iterator() {
 		return new CompositeIterator(this);
+	}
+
+	@Override
+	public Object get() {
+		return this.object;
+	}
+
+	@Override
+	public Tree getLeft() {
+		return this.left;
+	}
+
+	@Override
+	public Tree getRight() {
+		return this.right;
 	}
 	
 	
