@@ -9,24 +9,23 @@ public class CompositeIterator implements Iterator {
 
 	public CompositeIterator(Iterator<Tree> iterator) {
 		stack.push(iterator);
-		/*System.out.println("Tree bevat " + tree.get());
-		System.out.println("Left:" + tree.getLeft());
-		System.out.println("Right:" + tree.getRight());
-		*/
+		/*
+		 * System.out.println("Tree bevat " + tree.get());
+		 * System.out.println("Left:" + tree.getLeft());
+		 * System.out.println("Right:" + tree.getRight());
+		 */
 	}
 
 	@Override
 	public boolean hasNext() {
-		if(stack.isEmpty()) {
+		if (stack.isEmpty()) {
 			return false;
-		}
-		else {
+		} else {
 			Iterator<Tree> iterator = stack.peek();
-			if(!iterator.hasNext()) {
+			if (!iterator.hasNext()) {
 				stack.pop();
 				return hasNext();
-			}
-			else {
+			} else {
 				return true;
 			}
 		}
@@ -35,18 +34,20 @@ public class CompositeIterator implements Iterator {
 	@Override
 	public Object next() {
 		if (hasNext()) {
-			Iterator<Tree> iterator = stack.peek();
-			Tree tree =  iterator.next();
-			if(tree instanceof TreeImpl) {
+			Iterator<Tree> iterator = stack.pop();
+			Tree tree = iterator.next();
+			if(tree.getLeft() != null) {
 				stack.push(tree.getLeft().iterator());
+			}
+			if(tree.getRight() != null) {
 				stack.push(tree.getRight().iterator());
 			}
+
 			return tree;
-		}
-		else {
+		} else {
 			return null;
 		}
-		
+
 	}
 
 	@Override
