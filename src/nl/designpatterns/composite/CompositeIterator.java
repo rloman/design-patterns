@@ -4,36 +4,57 @@ import java.util.Iterator;
 import java.util.Stack;
 
 public class CompositeIterator implements Iterator {
-	
-	private Stack <Tree> stack = new Stack<Tree>();
-	
-	public CompositeIterator(Tree tree) {
-		stack.push(tree);
-		System.out.println("Tree bevat "+tree.get());
-		System.out.println("Left:"+tree.getLeft());
-		System.out.println("Right:"+tree.getRight());
+
+	private Stack<Iterator<Tree>> stack = new Stack<Iterator<Tree>>();
+
+	public CompositeIterator(Iterator<Tree> iterator) {
+		stack.push(iterator);
+		/*System.out.println("Tree bevat " + tree.get());
+		System.out.println("Left:" + tree.getLeft());
+		System.out.println("Right:" + tree.getRight());
+		*/
 	}
 
 	@Override
 	public boolean hasNext() {
-		return !stack.isEmpty();
+		if(stack.isEmpty()) {
+			return false;
+		}
+		else {
+			Iterator<Tree> iterator = stack.peek();
+			if(!iterator.hasNext()) {
+				stack.pop();
+				return hasNext();
+			}
+			else {
+				return true;
+			}
+		}
 	}
 
 	@Override
 	public Object next() {
-		Tree result = stack.pop();
-		if(!(result.getLeft() instanceof NullTreeImpl) && result.getLeft()!=null) stack.push(result.getLeft());
-		if(!(result.getRight() instanceof NullTreeImpl) && result.getRight() != null) stack.push(result.getRight());
+		if (hasNext()) {
+			Iterator<Tree> iterator = stack.peek();
+			Tree tree =  iterator.next();
+			if(tree instanceof TreeImpl) {
+				stack.push(tree.getLeft().iterator());
+				stack.push(tree.getRight().iterator());
+			}
+			return tree;
+		}
+		else {
+			return null;
+		}
 		
-		return result;
 	}
 
 	@Override
 	public void remove() {
 		throw new UnsupportedOperationException();
-		
+
 	}
-	
+
 	public Stack getStack() {
 		return stack;
 	}

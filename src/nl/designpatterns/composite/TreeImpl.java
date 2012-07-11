@@ -1,19 +1,21 @@
 package nl.designpatterns.composite;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class TreeImpl implements Tree {
 	
-	private Object object;
+	private Comparable object;
 	
-	private Tree left = new NullTreeImpl();
-	private Tree right = new NullTreeImpl();
+	private Tree left;
+	private Tree right;
 	
-	public TreeImpl(Object o) {
+	public TreeImpl(Comparable o) {
 		this.object = o;
+		left = new NullTreeImpl();
+		right = new NullTreeImpl();
 	}
-	
-	public TreeImpl(){}
 	
 	public void traverse() {
 		System.out.println(object);
@@ -23,20 +25,29 @@ public class TreeImpl implements Tree {
 	}
 
 	@Override
-	public void add(Object o) {
-		this.object = o;
-		left = new TreeImpl(o);
-		right = new TreeImpl(o);
-		
+	public void add(Comparable o) {
+		//this.object = o;
+		if(this.object.compareTo(o) < 0) {
+			left = new TreeImpl(o);
+		}
+		else {
+			right = new TreeImpl(o);
+		}
 	}
 
 	@Override
 	public Iterator iterator() {
-		return new CompositeIterator(this);
+		//trial
+		List <Tree> lijst = new ArrayList<Tree>();
+		lijst.add(this);
+		//lijst.add(this.getLeft());
+		//lijst.add(this.getRight());
+		
+		return new CompositeIterator(lijst.iterator());
 	}
 
 	@Override
-	public Object get() {
+	public Comparable get() {
 		return this.object;
 	}
 
@@ -49,7 +60,4 @@ public class TreeImpl implements Tree {
 	public Tree getRight() {
 		return this.right;
 	}
-	
-	
-
 }

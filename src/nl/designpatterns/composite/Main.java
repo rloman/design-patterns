@@ -1,21 +1,20 @@
 package nl.designpatterns.composite;
 
+import java.util.Iterator;
+
 
 public class Main {
 
 	public static void main(String[] args) {
 		
 		TreeImpl tree = new TreeImpl(13);
+		tree.add(15);
+		tree.add(17);
 		
-		//tree.traverse();
-		
-		int teller = 0;
-		CompositeIterator i = (CompositeIterator) tree.iterator();
+		Iterator<Tree> i =  tree.iterator();
 		while(i.hasNext()) {
-			//System.out.println(++teller);
 			Tree t = (Tree) i.next();
-			System.out.println(i.getStack());
-			//System.out.println(t.get());
+			System.out.println(t.get());
 			
 		}
 

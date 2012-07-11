@@ -9,17 +9,17 @@ public class NullTreeImpl implements Tree {
 	}
 
 	@Override
-	public void add(Object o) {
+	public void add(Comparable o) {
 		return;
 	}
 
 	@Override
 	public Iterator iterator() {
-		return null;
+		return new NullIterator();
 	}
 
 	@Override
-	public Object get() {
+	public Comparable get() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -32,10 +32,8 @@ public class NullTreeImpl implements Tree {
 
 	@Override
 	public Tree getRight() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-	
 	
 
 }
