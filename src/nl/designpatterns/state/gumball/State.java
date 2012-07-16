@@ -1,4 +1,4 @@
-package nl.designpatterns.state;
+package nl.designpatterns.state.gumball;
 
 public interface State {
 	
