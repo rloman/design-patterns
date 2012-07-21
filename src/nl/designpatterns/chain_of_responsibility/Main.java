@@ -13,7 +13,11 @@ public class Main {
 		NumberHandler handler = new NumberHandler();
 		handler.handle(4);
 		
-		handler.handle("1234857428752943570243857209384");
+		String tobeHandled = "1234857428752943570243857209384";
+		
+		handler.handle(tobeHandled);
+		System.out.println(tobeHandled);
+		handler.show();
 
 	}
 
