@@ -20,6 +20,14 @@ public class Tree {
 		this.age = age;
 	}
 	
+	public void show() {
+		System.out.println("<tree>");
+		System.out.println("Mijn x is:"+x);
+		System.out.println("Mijn y is:"+y);
+		System.out.println("Mijn age is:"+age);
+		System.out.println("</tree>");
+	}
+	
 	
 
 }
