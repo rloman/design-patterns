@@ -1,12 +1,14 @@
-package nl.designpatterns.visitor;
+package nl.designpatterns.visitor.compiler;
 
-public class StructurePrintingVisitor extends Visitor {
+
+public class StructurePrintingVisitor extends NodeVisitor {
 
 	@Override
 	public void visit(Program program) {
 		System.out.println("<Program>");
 		program.declaration.accept(this);
 		program.statement.accept(this);
+		program.complexDeclaration.accept(this);
 		System.out.println("</Program>");
 		
 	}
@@ -23,6 +25,12 @@ public class StructurePrintingVisitor extends Visitor {
 		System.out.println("\t<Declaration>");
 		System.out.println("\t</Declaration");
 		
+	}
+	
+	@Override
+	public void visit(ComplexDeclaration complexDeclaration) {
+		System.out.println("\t<ComplexDeclaration>");
+		System.out.println("\t</ComplexDeclaration");
 	}
 
 }
