@@ -12,7 +12,7 @@ public class HomeTheaterFacade {
 		this.player = player;
 	}
 	
-	public void niceEveningWithWoman() {
+	public void niceEvening() {
 		burner.burn();
 		plex.play();
 		player.play();

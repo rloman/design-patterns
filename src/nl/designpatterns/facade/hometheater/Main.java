@@ -6,7 +6,7 @@ public class Main {
 		
 		HomeTheaterFacade facade = new HomeTheaterFacade(new DVDBurner(), new PlexPlayer(), new HifiSet());
 		
-		facade.niceEveningWithWoman();
+		facade.niceEvening();
 
 	}
 

@@ -3,8 +3,8 @@ package nl.designpatterns.chain_of_responsibility;
 public class NumberHandler implements Handler {
 	
 	private int number;
-	private Handler chain;
 	private int hits;
+	private Handler chain;
 	
 	public NumberHandler(int number) {
 		this.number = number;
@@ -25,9 +25,12 @@ public class NumberHandler implements Handler {
 		if(this.number == number) {
 			System.out.println("Handled a "+number+"!");
 			hits++;
+			
 			return true;
 		}
-		return chain.handle(number);
+		else {
+			return chain.handle(number);
+		}
 	}
 	
 	@Override
