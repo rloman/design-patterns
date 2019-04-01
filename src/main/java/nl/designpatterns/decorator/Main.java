@@ -4,9 +4,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Beverage drank = new Sugar(new Chocolate(new Milk(new Coffee())));
+		Beverage drink = new Sugar(new Chocolate(new Milk(new Coffee())));
 		
-		System.out.println(drank.cost());
+		System.out.println(drink.cost());
 		
 	}
 
