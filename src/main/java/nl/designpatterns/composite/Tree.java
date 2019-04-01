@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Tree {
+public class Tree <T extends Comparable>  implements Iterable<Tree> {
 
-	private Comparable object;
+	private T object;
 
 	private Tree left;
 	private Tree right;
@@ -22,7 +22,7 @@ public class Tree {
 			right.traverse();
 	}
 
-	public void add(Comparable o) {
+	public void add(T o) {
 		if (this.object == null) {
 			this.object = o;
 			return;
@@ -43,7 +43,7 @@ public class Tree {
 		}
 	}
 
-	public Iterator iterator() {
+	public Iterator<Tree> iterator() {
 		// trial
 		List<Tree> lijst = new ArrayList<Tree>();
 		lijst.add(this);
