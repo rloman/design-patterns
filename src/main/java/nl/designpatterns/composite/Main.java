@@ -3,7 +3,7 @@ package nl.designpatterns.composite;
 import java.util.Iterator;
 
 
-public class Main {
+public class Application {
 
 	public static void main(String[] args) {
 		

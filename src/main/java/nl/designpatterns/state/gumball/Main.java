@@ -1,6 +1,6 @@
 package nl.designpatterns.state.gumball;
 
-public class Main {
+public class Application {
 
 	public static void main(String[] args) {
 		GumballMachine machine = new GumballMachine(3);

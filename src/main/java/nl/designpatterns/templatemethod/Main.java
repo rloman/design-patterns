@@ -1,6 +1,6 @@
 package nl.designpatterns.templatemethod;
 
-public class Main {
+public class Application {
 
 	public static void main(String[] args) {
 		

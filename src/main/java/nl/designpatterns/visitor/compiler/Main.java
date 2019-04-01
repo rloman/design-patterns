@@ -1,7 +1,7 @@
 package nl.designpatterns.visitor.compiler;
 
 
-public class Main {
+public class Application {
 
 	public static void main(String[] args) {
 		
