@@ -1,3 +1,8 @@
 bin
 *.class
 *.jar
+.settings
+.project
+*.iml
+.idea
+
