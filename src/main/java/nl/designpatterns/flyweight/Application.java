@@ -2,7 +2,7 @@ package nl.designpatterns.flyweight;
 
 import java.util.List;
 
-public class Main {
+public class Application {
 
 	public static void main(String[] args) {
 
