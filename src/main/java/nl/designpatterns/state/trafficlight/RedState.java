@@ -17,7 +17,7 @@ public class RedState implements State {
 
 	@Override
 	public void switchOrange() {
-		System.out.println("We zijn geen Duits stoplicht! :-)");
+		System.out.println("We are not a German trafficlight! :-)");
 	}
 
 	@Override

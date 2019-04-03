@@ -1,13 +1,16 @@
 package nl.designpatterns.state.trafficlight;
 
 public class Trafficlight  {
-	
+
+	// current state
+	private State state;
+
+	// possible state(s)
 	private State redState;
 	private State orangeState;
 	private State greenState;
-	
-	private State state;
-	
+
+
 	public Trafficlight() {
 		redState = new RedState(this);
 		orangeState = new OrangeState(this);
