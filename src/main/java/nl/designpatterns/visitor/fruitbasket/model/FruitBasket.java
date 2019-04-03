@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Fruitmand extends Fruit implements Iterable<Fruit> {
+public class FruitBasket extends Fruit implements Iterable<Fruit> {
 
     private List<Fruit> content = new ArrayList<>();
 

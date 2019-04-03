@@ -8,7 +8,7 @@ import nl.designpatterns.visitor.fruitbasket.visitors.XMLPrintingVisitor;
 public class Application {
 
     public static void main(String[] args) {
-        Fruitmand mand = new Fruitmand();
+        FruitBasket mand = new FruitBasket();
 
         Fruit appel = new Appel();
         Fruit peer = new Peer();
