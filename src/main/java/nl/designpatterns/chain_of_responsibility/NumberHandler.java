@@ -43,8 +43,7 @@ public class NumberHandler implements Handler {
 	
 	@Override
 	public void show() {
-		System.out.println("Found "+hits+" occurrences of "+this.number+"!");
+		System.out.printf("Found %d occurrences of %d%n", hits, this.number);
 		chain.show();
-		
 	}
 }
