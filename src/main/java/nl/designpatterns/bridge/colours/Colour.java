@@ -1,4 +1,4 @@
-package nl.designpatterns.adapter.bridge.colours;
+package nl.designpatterns.bridge.colours;
 
 
 import java.awt.*;

@@ -1,6 +1,6 @@
-package nl.designpatterns.adapter.bridge.shapes;
+package nl.designpatterns.bridge.shapes;
 
-import nl.designpatterns.adapter.bridge.colours.Colour;
+import nl.designpatterns.bridge.colours.Colour;
 
 public class Circle extends Shape {
 
